@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: #2e2e50;
+  display: flex;          /* Activa Flexbox para maquetar todo el cuerpo */
+  flex-direction: column; /* Organiza los elementos principales en columna vertical */
+  min-height: 100vh;      /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease; /* Para que no sea muy brusco el cambio */
+}
+
+img {
+  max-width: 100%;        /* Hace que las imágenes sean responsives y no se salgan de la caja */
+  display: block;
+}
+
+header {
+  background-color: #ff5e57;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  height: 130px;
+  position: relative;     /* Necesario para posicionar los adornos absolutos dentro del header */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;            /* Para que el header quede por encima de otros elementos */
+}
+
+.adorno {
+  position: absolute;     /* Saca el elemento del flujo normal para moverlo libremente */
+  height: 150px;
+  width: auto;
+  z-index: 1;
+  bottom: -25px;
+}
+
+.adorno-izq { left: 20px; }
+.adorno-der { right: 20px; }
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;              /* Espacio automático entre los enlaces del menú */
+  z-index: 2;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: white;
+}
+
+nav a:hover, nav a.activo {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05); /* Efecto de que al pasar el ratón se hace más grande */
+}
+
+main {
+  flex: 1;                /* Empuja el footer para abajo */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;         /* Centra el contenedor principal horizontalmente */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.intro-seccion {
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-seccion h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #ff5e57;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.bloque-titulo h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin: 20px 0;
+  text-shadow: 3px 3px 0 #ff5e57;
+}
+
+.bloque-contenido {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 40px auto;
+  backdrop-filter: blur(5px); /* Efecto transparente para los vinculos */
+}
+
+.contenedor-equipos, .galeria-grid, .lista-redes, .contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;        /* Si no caben los elementos en la columna bajan una fila */
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.tarjeta-equipo, .caja-social, .foto-item {
+  background-color: white;
+  color: #333;
+  border-radius: 12px;
+  overflow: hidden;       /* Oculta cualquier contenido (como imágenes) que se salga de los bordes redondeados */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  flex: 0 1 300px;        /* (Flex shorthand) no crecee pero sí que encoge, base de 300px de ancho */
+  display: flex;
+  flex-direction: column;
+}
+
+.foto-item {
+  height: 250px;
+  flex-basis: 300px;
+}
+
+.tarjeta-equipo:hover, .caja-social:hover, .foto-item:hover {
+  transform: translateY(-8px); /* Pone un efecto chulo para mover hacia arriba la tarjeta */
+  z-index: 2;
+}
+
+.foto-equipo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;      /* Recorta la imagen para llenar el area sin que quede feo */
+}
+
+.contenido-tarjeta {
+  padding: 20px;
+  text-align: left;
+  flex: 1;                /* Con esto ocupo el espacio restante vertical dentro de la tarjeta para alinear el contenido */
+}
+
+.contenido-tarjeta h3 {
+  color: #ff5e57;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.timeline-container, .lineaTiempo {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Linea del timeline */
+.lineaTiempo::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;              /* Ubica la línea al centro horizontal */
+  margin-left: -3px;      /* Compensa la mitad del ancho para centrarla perfectamente */
+}
+
+.contenedor-evento {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;             /* Cada cosa ocupa la mitad del ancho */
+  box-sizing: border-box;
+}
+
+.izquierda { left: 0; }
+.derecha { left: 50%; }   /* Empuja los eventos derechos a la mitad derecha del contenedor */
+
+.contenido {
+  padding: 25px;
+  background-color: white;
+  border-radius: 8px;
+  color: #333;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.img-lineaTiempo {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.caja-contacto {
+  display: flex;
+  gap: 50px;
+  background-color: white;
+  color: #333;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.columna-form { flex: 1.5; }
+.columna-info { flex: 1; border-left: 2px solid #eee; padding-left: 40px; display: flex; flex-direction: column; gap: 20px; }
+
+form label {
+  display: block;
+  font-weight: bold;
+  color: #2e2e50;
+  margin: 15px 0 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #ff5e57;  /* Cambia el color del borde al hacer clic en el el */
+  outline: none;
+}
+
+.boton-enviar {
+  background-color: #ff5e57;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.boton-enviar:hover { background-color: #ff4038; }
+
+.caja-social {
+  padding: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.icono-social {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.boton-seguir {
+  margin-top: 15px;
+  background-color: #2e2e50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #ff5e57;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  margin-top: auto;       /* Esto hace que el footer se pegue al fondo  si hay poco contenido */
+}

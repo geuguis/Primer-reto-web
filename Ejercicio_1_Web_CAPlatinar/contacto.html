@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="estilos.css" rel="stylesheet" />
+  <title>Contacto - C.A. El Plantinar</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="raqueta.png" alt="Raqueta" class="adorno adorno-izq" />
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="filiales.html">Filiales</a></li>
+        <li><a href="seniors.html">Seniors</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="convivencia.html">Convivencia</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="redes.html">Redes Sociales</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <img src="balones.png" alt="Balones" class="adorno adorno-der" />
+  </header>
+
+  <main class="pagina-contacto">
+
+    <section class="intro-seccion">
+      <h1>Contacta con nosotros</h1>
+      <p>Dudas o Inscripciones? Escríbenos.</p>
+    </section>
+
+    <div class="caja-contacto">
+
+      <div class="columna-form">
+        <form action="#" method="POST">
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="email" required>
+
+          <label for="asunto">Asunto:</label>
+          <input type="text" id="asunto" name="asunto" placeholder="Inscripciones, dudas...">
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
+
+          <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+        </form>
+      </div>
+
+      <div class="columna-info">
+        <div class="info-caja">
+          <h3>📍 Dirección</h3>
+          <p>Av. San Pablo, <br>El Plantinar, 41019 Sevilla</p>
+        </div>
+
+        <div class="info-caja">
+          <h3>📞 Teléfono</h3>
+            <a href="tel:+34616934892" class="link">+34 616 934 892</a>
+        </div>
+
+        <div class="info-caja">
+          <h3>✉️ Email</h3>
+          <a href="mailto:CAPlatinar@gmail.com" class="link">CAPlatinar@gmail.com</a>
+        </div>
+
+      </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 <strong>Club Atlético El Plantinar</strong>. Todos los derechos reservados.</p>
+      <p class="creditos">Página web realizada por <span>Guillermo Eugui Sánchez</span></p>
+    </div>
+  </footer>
+</body>
+
+</html>
